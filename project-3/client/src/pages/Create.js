@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
-import axios from 'axios';
+import API from '../utils/API'
 
 // Sets user name and room name when user signs on
-function Create(props) {
+function Create() {
   // const [name, setName] = useState('');
   const [room, setRoom] = useState('');
 
@@ -18,12 +18,6 @@ function Create(props) {
     nickname = user.given_name;
   }
 
-  function getRooms() {
-    axios.get('/api/rooms')
-    .then(res => {
-      res.json();
-    })
-  }
 
   const handleChange = (event) => {
     setRoom(event.target.value);
@@ -31,24 +25,13 @@ function Create(props) {
 
   const handleClick = (event) => {
     event.preventDefault();
-    if (!room) {
-      return;
+    if (room) {
+      API.createRoom(room)
+        .then(() => {
+          console.log(`room: ${room} was saved`)
+        }).catch(err => console.log(err));
     }
-    upsertRoom({
-      name: room,
-      created_at: Date.now()
-    });
-  }
-
-  function upsertRoom(roomData) {
-    axios.post('/api/rooms', roomData)
-    .then(getRooms);
-  }
-
-
-  
-
-
+  };
   
   return (
     isAuthenticated ? (
