@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
+import API from '../utils/API';
+import RoomList from '../components/RoomList';
+import Room from '../components/Room';
 
 // Sets user name and room name when user signs on
 function Join(props) {
   // const [name, setName] = useState('');
-  const [room, setRoom] = useState('');
+  const [rooms, setRooms] = useState([]);
 
   const { user, isAuthenticated } = useAuth0();
 
@@ -17,22 +20,57 @@ function Join(props) {
     nickname = user.given_name;
   }
 
-  const handleChange = (event) => {
-    setRoom(event.target.value)
-  }
+  useEffect(() => {
+    loadRooms()
+  }, [])
 
-  const handleSubmit = (event) => {
-    if (!nickname || !room) {
-      event.preventDefault();
-  }
-}
+  function loadRooms() {
+    API.getRooms()
+      .then(res => {
+        setRooms(res.data)
+      }).catch(err => console.log(err));
+  };
+
+  // const handleChange = (event) => {
+  //   setRoom(event.target.value)
+  // }
+
+//   const handleSubmit = (event) => {
+//     if (!nickname || !room) {
+//       event.preventDefault();
+//   }
+// }
   
   return (
-    isAuthenticated ? (
-    <div className="joinOuterContainer">
-      <div className="joinInnerContainer">
+    <div>
+        <h1>Join a room</h1>
+
+        {rooms.length ? (
+          <RoomList>
+            {rooms.map(room => {
+              return (
+                <Room key={room._id}>
+                  <a href={`/chat?name=${nickname}&room=${room.name}`}>
+                    <strong>
+                      {room.name}
+                    </strong>
+                  </a>
+                </Room>
+              );
+            })}
+          </RoomList>
+        ) : (
+          <h3>No rooms to Display</h3>
+        )}
+  </div>
+  );
+}
+
+export default Join  
+
+{/* <div className="joinInnerContainer">
         <h1 className="heading">Join A Room</h1>
-        <div>
+        {/* <div>
           <p>welcome, {nickname}! Enter an existing room's name to join!</p>
         </div>
         <div>
@@ -40,14 +78,4 @@ function Join(props) {
         </div>
         <Link onClick={handleSubmit} to={`/chat?name=${nickname}&room=${room}`}>
           <button className={'button mt-20'} type="submit">Join Room</button>
-        </Link>
-      </div>
-    </div>
-    ) :
-    (
-      <h1>User is not authenticated</h1>
-    )
-  );
-}
-
-export default Join
+        </Link> */}
