@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -17,14 +16,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
+    "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.10.15",
     "nodemon": "^2.0.6",
     "react-router-dom": "^5.2.0",
     "socket.io": "^2.3.0",
-    "axios": "^0.18.0",
-    "if-env": "^1.0.4",
-    "concurrently": "^4.1.0",
-    "mongoose": "^5.3.16"
-  }
+    "v-response": "^1.1.0"
+  },
+  "devDependencies": {},
+  "description": ""
 }

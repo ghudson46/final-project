@@ -1,4 +1,5 @@
 module.exports = {
-    Room: require('./room.js'),
-    Message: require('./message')
+    Room: require('./room'),
+    Message: require('./message'),
+    Book: require('./book')
 };

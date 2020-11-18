@@ -9,6 +9,7 @@ import Profile from './pages/Profile'
 import Join from './pages/Join'
 import Chat from './pages/Chat'
 import Create from './pages/Create'
+import Books from './pages/Books'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path='/join' component={Join} />
             <Route path='/chat' component={Chat} />
             <Route path='/create' component={Create} />
+            <Route path='/books' component={Books} />
           </Switch>
         </div>
       </div>

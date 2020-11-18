@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const roomsController = require('../../controllers/roomsController');
+const roomsController = require('../../controllers/roomController');
 
 // Matches with '/api/rooms
 router.route('/join')
