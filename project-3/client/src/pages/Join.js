@@ -27,7 +27,8 @@ function Join(props) {
   function loadRooms() {
     API.getRooms()
       .then(res => {
-        setRooms(res.data)
+        setRooms(res.data);
+        console.log(rooms)
       }).catch(err => console.log(err));
   };
 
