@@ -24,11 +24,12 @@ function Create() {
   }
 
   const handleClick = (event) => {
-    event.preventDefault();
-    if (room) {
+    if (!room) {
+      event.preventDefault();
+    } else if (room) {
       API.createRoom(room)
         .then(() => {
-          console.log(`room: ${room} was saved`)
+          console.log(`room: ${room} was saved`);
         }).catch(err => console.log(err));
     }
   };
@@ -39,12 +40,12 @@ function Create() {
       <div className="joinInnerContainer">
         <h1 className="heading">Create A Room</h1>
         <div>
-          <p>welcome, {nickname}! Enter the name of the room you wish to create!</p>
+          <p>welcome {nickname}! Enter the name of the room you wish to create!</p>
         </div>
         <div>
           <input placeholder="Room" className="createInput mt-20" type="text" onChange={handleChange} />
         </div>
-        <Link onClick={handleClick} to={`/chat?name=${nickname}&room=${room}`}>
+        <Link onClick={handleClick} to={`/chat?name=${nickname}&room=${room}`} style={{textDecoration: 'none', linkStyleType: 'none'}}>
           <button className={'button mt-20'} type="submit">Create Room</button>
         </Link>
       </div>
