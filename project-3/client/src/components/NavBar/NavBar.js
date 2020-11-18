@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from 'react-bootstrap/Nav'
 
 import MainNav from './MainNav';
 import AuthNav from './AuthNav';

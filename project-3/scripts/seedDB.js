@@ -50,28 +50,46 @@ mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/p
 
 const roomSeed = [
     {
-        name: 'Hudson House',
-        creator: 'Garret Hudson',
-        usersInRoom: ['Abbey Hudson', 'Garrett Hudson', 'Moose Hudson'],
-        dateCreated: new Date(Date.now())
+        name: 'Hudson House'
     },
     {
-        name: 'Star Wars',
-        creator: 'George Lucas',
-        usersInRoom: ['Darth Vader', 'Luke Skywalker', 'Han Solo', 'Boba Fett'],
-        dateCreated: new Date(Date.now())
+        name: 'Star Wars'
     },
     {
-        name: 'LA Lakers',
-        creator: 'LeBron James',
-        usersInRoom: ['LeBron James', 'Anthony Davis', 'Rajon Rondo', 'Kyle Kuzma'],
-        dateCreated: new Date(Date.now())
+        name: 'LA Lakers'
     }
 ]
 
-db.Room
+const userSeed = [
+  {
+    firstName: 'Garrett',
+    lastName: 'Hudson',
+    userName: 'ghudson46',
+    email: 'garrett.hudson46@gmail.com',
+    password: 'thisismypassword',
+    profilePic: 'https://richmondspiders.com/images/2016/8/16/RFRRRBJPHTHTYPA.20160816021134.jpg'
+  },
+  {
+    firstName: 'Tom',
+    lastName: 'Brady',
+    userName: 'TB12',
+    email: 'TB12@gmail.com',
+    password: 'gobucsandpats',
+    profilePic: 'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1b63Od.img?h=351&w=624&m=6&q=60&o=f&l=f'
+  },
+  {
+    firstName: 'Scooby',
+    lastName: 'Doo',
+    userName: 'scoob',
+    email: 'scoobysnacklover@gmail.com',
+    password: 'ruhrohf',
+    profilePic: 'https://www.thesun.co.uk/wp-content/uploads/2019/11/NINTCHDBPICT000536074229-e1572807808559.jpg'
+  },
+]
+
+db.User
   .remove({})
-  .then(() => db.Room.collection.insertMany(roomSeed))
+  .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

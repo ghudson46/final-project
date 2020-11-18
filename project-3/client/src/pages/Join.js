@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
 import API from '../utils/API';
 import RoomList from '../components/RoomList';
@@ -22,7 +21,7 @@ function Join(props) {
 
   useEffect(() => {
     loadRooms()
-  }, [])
+  })
 
   function loadRooms() {
     API.getRooms()
@@ -31,16 +30,6 @@ function Join(props) {
         console.log(rooms)
       }).catch(err => console.log(err));
   };
-
-  // const handleChange = (event) => {
-  //   setRoom(event.target.value)
-  // }
-
-//   const handleSubmit = (event) => {
-//     if (!nickname || !room) {
-//       event.preventDefault();
-//   }
-// }
   
   return (
     <div>
@@ -68,16 +57,3 @@ function Join(props) {
 }
 
 export default Join  
-
-{/* <div className="joinInnerContainer">
-        <h1 className="heading">Join A Room</h1>
-        {/* <div>
-          <p>welcome, {nickname}! Enter an existing room's name to join!</p>
-        </div>
-        <div>
-          <input placeholder="Room" className="joinInput mt-20" type="text" onChange={handleChange} />
-        </div>
-        <Link onClick={handleSubmit} to={`/chat?name=${nickname}&room=${room}`}>
-          <button type="button" class="btn btn-primary">Hello</button>
-          <button className={'button mt-20'} type="submit">Join Room</button>
-        </Link> */}
