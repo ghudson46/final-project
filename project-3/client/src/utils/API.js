@@ -18,9 +18,9 @@ export default {
     return axios.get("/api/messages/:id");
   },
   createRoom: function(roomData) {
-      return axios.post('api/rooms', roomData)
+      return axios.post('/api/rooms', roomData)
   },
   createMessage: function(messageData) {
-      return axios.post('api/messages', messageData)
+      return axios.post('/api/messages', messageData)
   }
 };
