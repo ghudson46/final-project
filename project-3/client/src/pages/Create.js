@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
 import API from '../utils/API'
+import axios from 'axios';
 
 // Sets user name and room name when user signs on
 function Create() {
@@ -28,9 +29,10 @@ function Create() {
       event.preventDefault();
     } else if (room) {
       API.createRoom(room)
-        .then(() => {
-          console.log(`room: ${room} was saved`);
-        }).catch(err => console.log(err));
+        .then(res => {
+          console.log(`${room} was created`)
+        })
+        .catch(err => console.log(err));
     }
   };
   

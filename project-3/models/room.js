@@ -2,10 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const roomSchema = new Schema({
-  name: { type: String, required: true },
-  creator: { type: String },
-  usersInRoom: { type: Array },
-  dateCreated: { type: Date, default: Date.now }
+  name: { type: String, required: true }
 });
 
 const Room = mongoose.model("Room", roomSchema);
