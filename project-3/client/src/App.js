@@ -10,7 +10,6 @@ import Join from './pages/Join'
 import Chat from './pages/Chat'
 import Create from './pages/Create'
 import Books from './pages/Books'
-import Room from './pages/room'
 
 
 function App() {
@@ -20,6 +19,7 @@ function App() {
 
   return (
       <div id="app">
+        <h1>VideoParty</h1>
         <NavBar />
         <div className="container">
           <Switch>
@@ -29,7 +29,6 @@ function App() {
             <Route path='/chat' component={Chat} />
             <Route path='/create' component={Create} />
             <Route path='/books' component={Books} />
-            <Route path='/rooms' component={Room} />
           </Switch>
         </div>
       </div>

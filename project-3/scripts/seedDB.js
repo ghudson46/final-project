@@ -50,21 +50,23 @@ mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/p
 
 const roomSeed = [
     {
-        name: 'test1',
+        name: 'Hudson House',
+        creator: 'Garret Hudson',
+        usersInRoom: ['Abbey Hudson', 'Garrett Hudson', 'Moose Hudson'],
         dateCreated: new Date(Date.now())
     },
     {
-        name: 'test2',
+        name: 'Star Wars',
+        creator: 'George Lucas',
+        usersInRoom: ['Darth Vader', 'Luke Skywalker', 'Han Solo', 'Boba Fett'],
         dateCreated: new Date(Date.now())
     },
     {
-        name: 'test3',
+        name: 'LA Lakers',
+        creator: 'LeBron James',
+        usersInRoom: ['LeBron James', 'Anthony Davis', 'Rajon Rondo', 'Kyle Kuzma'],
         dateCreated: new Date(Date.now())
-    },
-    {
-        name: 'test4',
-        dateCreated: new Date(Date.now())
-    },
+    }
 ]
 
 db.Room
