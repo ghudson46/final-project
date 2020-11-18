@@ -6,7 +6,7 @@ const cors = require('cors');
 
 // Dependencies for mongodb
 const mongoose = require('mongoose');
-const routes = require('./routes/');
+const routes = require('./routes');
 const PORT = process.env.PORT || 3001;
 
 // User methods
@@ -70,10 +70,12 @@ if (process.env.NODE_ENV === "production") {
 
 
 // mongodb connection
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/project3"
-);
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://localhost/project3"
+// );
 
-  server.listen(PORT, function() {
+mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',  { useNewUrlParser: true });
+
+server.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
