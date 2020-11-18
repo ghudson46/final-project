@@ -39,6 +39,7 @@ function Join(props) {
           <input placeholder="Room" className="joinInput mt-20" type="text" onChange={handleChange} />
         </div>
         <Link onClick={handleSubmit} to={`/chat?name=${nickname}&room=${room}`}>
+          <button type="button" class="btn btn-primary">Hello</button>
           <button className={'button mt-20'} type="submit">Join Room</button>
         </Link>
       </div>
