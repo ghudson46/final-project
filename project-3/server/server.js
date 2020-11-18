@@ -4,6 +4,8 @@ const express = require('express');
 const socketio = require('socket.io');
 const cors = require('cors');
 
+const PORT = process.env.PORT || 5000;
+
 // User methods
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 
@@ -61,6 +63,6 @@ io.on('connect', (socket) => {
 // Server listening
 
 
-  server.listen(process.env.PORT || 5000, function() {
+  server.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
