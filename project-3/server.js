@@ -4,10 +4,14 @@ const express = require('express');
 const socketio = require('socket.io');
 const cors = require('cors');
 
+<<<<<<< HEAD:project-3/server.js
 // Dependencies for mongodb
 const mongoose = require('mongoose');
 const routes = require('./routes');
 const PORT = process.env.PORT || 3001;
+=======
+const PORT = process.env.PORT || 5000;
+>>>>>>> main:project-3/server/server.js
 
 // User methods
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
@@ -76,6 +80,10 @@ if (process.env.NODE_ENV === "production") {
 
 mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',  { useNewUrlParser: true });
 
+<<<<<<< HEAD:project-3/server.js
 server.listen(PORT, function() {
+=======
+  server.listen(PORT, function() {
+>>>>>>> main:project-3/server/server.js
     console.log("App listening on PORT " + PORT);
   });
