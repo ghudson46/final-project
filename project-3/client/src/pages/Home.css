@@ -1,0 +1,12 @@
+body {
+  font-size: 15pt;
+  font-weight: 100;
+  line-height: 1.75em;
+  display: flex;
+  justify-content: center;
+}
+
+a, p, h1 {
+  text-decoration: none;
+  color: white;
+}
