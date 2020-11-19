@@ -43,6 +43,7 @@ const Chat = ({ location }) => {
       if(error) {
         alert(error);
       }
+      // save in mongodb
     });
   }, [location.search]);
   
@@ -51,11 +52,13 @@ const Chat = ({ location }) => {
     // Updates the messages each time a message is sent
     socket.on('message', message => {
       setMessages(messages => [ ...messages, message ]);
+      // Save in mongodb
     });
     
     // Uses room data to set users
     socket.on("roomData", ({ users }) => {
       setUsers(users);
+      // pull users from mongodb
     });
 }, []);
 

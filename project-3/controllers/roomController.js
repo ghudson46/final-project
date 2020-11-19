@@ -19,6 +19,6 @@ module.exports = {
     db.Room
       .create(req.body)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .save(err => res.status(422).json(err));
   }
 };

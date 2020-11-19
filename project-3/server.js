@@ -9,8 +9,13 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 const PORT = process.env.PORT || 3001;
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // User methods
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
+const { urlencoded } = require('express');
 
 // Express app connects to server and socket
 const app = express();
@@ -19,6 +24,7 @@ const io = socketio(server);
 
 app.use(cors());
 app.use(routes);
+
 
 
 
