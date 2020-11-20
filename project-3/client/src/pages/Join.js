@@ -24,7 +24,7 @@ function Join(props) {
   }, []);
 
   function loadRooms() {
-    API.getRooms()
+    API.getUserRooms({ userId: user.sub })
       .then(res => {
         setRooms(res.data);
       }).catch(err => console.log(err));
@@ -41,6 +41,8 @@ function Join(props) {
         {rooms.length ? (
           <RoomList>
             {rooms.map(room => {
+              console.log(`user sub ${user.sub}`);
+              console.log(`room.userId ${room.userId}`);
               return (
                 <Room key={room._id}>
                   <a href={`/chat?name=${nickname}&room=${room.name}`}>
