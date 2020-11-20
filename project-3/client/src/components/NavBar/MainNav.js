@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav'
 import { useLocation } from 'react-router-dom'
+import LogoutButton from '../Authentication//LogoutButton'
 
 function MainNav() {
     const location = useLocation();
@@ -17,6 +18,9 @@ function MainNav() {
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/create" className={location.pathname === "/create" && "active"}>Create</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link><LogoutButton /></Nav.Link>
             </Nav.Item>
         </Nav>
     )

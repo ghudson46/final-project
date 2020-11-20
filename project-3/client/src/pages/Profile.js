@@ -12,6 +12,7 @@ function Profile() {
             <p>{user.email}</p>
             <button><a href="/join">Join a Room</a></button>
             <button><a href="/create">Create a Room</a></button>
+            
         </div>
         )
         : (
