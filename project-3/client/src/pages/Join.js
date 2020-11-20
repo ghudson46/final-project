@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from 'react';
+
+
 import { useAuth0 } from '@auth0/auth0-react';
 import API from '../utils/API';
 import RoomList from '../components/RoomList';
 import Room from '../components/Room';
 
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+
+import './Join.css'
+
+
 // Sets user name and room name when user signs on
 function Join(props) {
+ 
+
   // const [name, setName] = useState('');
   const [rooms, setRooms] = useState([]);
 
@@ -50,7 +61,24 @@ function Join(props) {
             })}
           </RoomList>
         ) : (
-          <h3>No rooms to Display</h3>
+          //<h3>No rooms to Display</h3>
+          <>
+            <style type="text/css">
+              {`
+                .Jumbtron-blue {
+                  background-color: blue;
+                }
+              `}
+            </style>
+            <Jumbotron fluid bg='dark'>
+              <Container> 
+                <h1>No rooms to display</h1>
+                <p>You can create a new room by clicking the button below:</p>
+                <Button variant="secondary">Create</Button>{' '}
+              </Container>
+            </Jumbotron>
+          </>
+        
         )}
   </div>
   );
