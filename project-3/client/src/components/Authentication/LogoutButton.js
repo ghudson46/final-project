@@ -6,11 +6,11 @@ function LogoutButton() {
     const { logout, isAuthenticated } = useAuth0();
     return (
         isAuthenticated && (
-            <button onClick={() => logout({
+            <div onClick={() => logout({
                 returnTo: window.location.origin,
-            })} style={{marginLeft: '2rem'}}>
+            })}>
             Log Out
-        </button>
+        </div>
         )
     )
 }
