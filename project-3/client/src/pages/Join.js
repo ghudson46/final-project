@@ -32,15 +32,18 @@ function Join(props) {
 
   useEffect(() => {
     loadRooms()
-  })
+  }, []);
 
   function loadRooms() {
     API.getRooms()
       .then(res => {
         setRooms(res.data);
-        console.log(rooms)
       }).catch(err => console.log(err));
   };
+
+  useEffect(() => {
+    console.log(rooms)
+  }, [rooms])
   
   return (
     <div>

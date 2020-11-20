@@ -4,22 +4,25 @@ const express = require('express');
 const socketio = require('socket.io');
 const cors = require('cors');
 
+// Express app connects to server and socket
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+
 // Dependencies for mongodb
 const mongoose = require('mongoose');
-const routes = require('./routes');
-const PORT = process.env.PORT || 3001;
 
 // User methods
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 
-// Express app connects to server and socket
-const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-app.use(cors());
+const routes = require('./routes');
 app.use(routes);
-
 
 
 // on connection to socket.io
@@ -60,10 +63,6 @@ io.on('connect', (socket) => {
   })
 });
 
-// MONGODB
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
 if (process.env.NODE_ENV === "production") {
   app.use(express.static('client/build'));
 }
@@ -77,5 +76,5 @@ if (process.env.NODE_ENV === "production") {
 mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',  { useNewUrlParser: true });
 
 server.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+  console.log("App listening on PORT " + PORT);
+});
