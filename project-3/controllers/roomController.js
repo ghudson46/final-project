@@ -16,9 +16,12 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log("req.body", req.body);
     db.Room
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .save(err => res.status(422).json(err));
+      .then(dbModel => {
+        res.json(dbModel);
+      })
+      .catch(err => res.status(422).json(err));
   }
 };

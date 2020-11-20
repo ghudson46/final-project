@@ -1,20 +1,37 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
+import API from '../utils/API';
 
-export class Books extends Component {
-    componentDidMount() {
-        axios.get('/api/books')
-            .then(res => {
-                console.log(res)
-            })
+function Books() {
+  const [room, setRoom] = useState();
+
+    const handleChange = (event) => {
+        setRoom(event.target.value);
     }
-    render() {
+    function handleSubmit(event) {
+        event.preventDefault();
+        if (room) {
+          API.createRoom(room)
+            .then(() => setRoom(''))
+            .catch(err => console.log(err));
+        }
+      };
+
+    console.log(room);
+
         return (
-            <div>
-                <h1>books</h1>
+            <div className="joinOuterContainer">
+            <div className="joinInnerContainer">
+              <h1 className="heading">Create A Room</h1>
+              <div>
+              </div>
+              <div>
+                <input placeholder="Room" className="createInput mt-20" type="text" onChange={handleChange} />
+              </div>
+                <button className={'button mt-20'} type="submit" onClick={handleSubmit}>Create Room</button>
             </div>
+          </div>
         )
-    }
 }
 
 export default Books

@@ -14,7 +14,7 @@ import Input from '../components/Input/Input';
 import VideoContainer from '../components/Video/VideoContainer';
 // import VideoCountdown from "../components/Video/VideoCountdown";
 
-const ENDPOINT = 'https://in-touch-chat.herokuapp.com/';
+const ENDPOINT = 'http://localhost:3001';
 
 // Create socket variable
 let socket;
