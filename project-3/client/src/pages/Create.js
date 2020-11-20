@@ -25,13 +25,12 @@ function Create() {
   }
 
   const handleClick = (event) => {
-    if (!room) {
-      event.preventDefault();
-    } else if (room) {
-      API.createRoom(room)
-        .then(res => {
-          console.log(`${room} was created`)
-        })
+    event.preventDefault();
+    console.log('room', room);
+    if (room) {
+      API.createRoom({ name: room }).then(
+        console.log(`${room} was added to the dB`)
+      )
         .catch(err => console.log(err));
     }
   };
@@ -45,7 +44,7 @@ function Create() {
           <p>welcome {nickname}! Enter the name of the room you wish to create!</p>
         </div>
         <div>
-          <input placeholder="Room" className="createInput mt-20" type="text" onChange={handleChange} />
+          <input placeholder="Room" className="createInput mt-20" type="text" name="room" onChange={handleChange} />
         </div>
         <Link onClick={handleClick} to={`/chat?name=${nickname}&room=${room}`} style={{textDecoration: 'none', linkStyleType: 'none'}}>
           <button className={'button mt-20'} type="submit">Create Room</button>

@@ -14,7 +14,7 @@ import Input from '../components/Input/Input';
 import VideoContainer from '../components/Video/VideoContainer';
 // import VideoCountdown from "../components/Video/VideoCountdown";
 
-const ENDPOINT = 'https://in-touch-chat.herokuapp.com/';
+const ENDPOINT = 'http://localhost:3001';
 
 // Create socket variable
 let socket;
@@ -43,6 +43,7 @@ const Chat = ({ location }) => {
       if(error) {
         alert(error);
       }
+      // save in mongodb
     });
   }, [location.search]);
   
@@ -51,11 +52,13 @@ const Chat = ({ location }) => {
     // Updates the messages each time a message is sent
     socket.on('message', message => {
       setMessages(messages => [ ...messages, message ]);
+      // Save in mongodb
     });
     
     // Uses room data to set users
     socket.on("roomData", ({ users }) => {
       setUsers(users);
+      // pull users from mongodb
     });
 }, []);
 
