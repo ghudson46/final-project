@@ -25,9 +25,9 @@ function Create() {
   }
 
   const handleClick = (event) => {
-    event.preventDefault();
-    console.log('room', room);
-    if (room) {
+    if (!room) {
+      event.preventDefault();
+    } else if (room) {
       API.createRoom({ name: room }).then(
         console.log(`${room} was added to the dB`)
       )
