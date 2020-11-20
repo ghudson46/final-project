@@ -1,18 +1,21 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
+// mongodb connection
 
 mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',  { useNewUrlParser: true });
 
 const roomSeed = [
     {
+        userId: 'google-oauth2|106316170555327315614',
         name: 'Hudson House'
     },
     {
+        userId: 'google-oauth2|106316170555327315614',
         name: 'Star Wars'
     },
     {
+      userId: 'google-oauth2|106316170555327315614',
         name: 'LA Lakers'
     }
 ]
@@ -34,9 +37,9 @@ const userSeed = [
   },
 ]
 
-db.User
+db.Room
   .remove({})
-  .then(() => db.User.collection.insertMany(userSeed))
+  .then(() => db.Room.collection.insertMany(roomSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

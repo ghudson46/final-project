@@ -9,11 +9,6 @@ import Profile from './pages/Profile'
 import Join from './pages/Join'
 import Chat from './pages/Chat'
 import Create from './pages/Create'
-<<<<<<< HEAD
-
-=======
->>>>>>> main
-
 
 function App() {
   const { isLoading } = useAuth0();

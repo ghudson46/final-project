@@ -9,6 +9,9 @@ export default {
   getRoom: function(id) {
     return axios.get("/api/rooms/" + id);
   },
+  getUserRooms: function() {
+    return axios.get('/api/rooms');
+  },
   // Gets all messages
   getMessages: function() {
     return axios.get("/api/messages");
