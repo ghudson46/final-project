@@ -10,3 +10,15 @@ a, p, h1 {
   text-decoration: none;
   color: white;
 }
+
+*{
+  background-color: ;
+}
+
+#bgColor {
+  background-color: #4d4e5c!important;
+  border: solid;
+  border-radius: 25px;
+  padding: 10px;
+}
+
