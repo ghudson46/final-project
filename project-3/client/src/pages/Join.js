@@ -5,6 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import API from '../utils/API';
 import RoomList from '../components/RoomList';
 import Room from '../components/Room';
+import { Link } from 'react-router-dom';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
@@ -19,10 +20,12 @@ function Join(props) {
 
   // const [name, setName] = useState('');
   const [rooms, setRooms] = useState([]);
+  const [room, setRoom] = useState('');
 
   const { user, isAuthenticated } = useAuth0();
 
   let nickname; 
+  let userId = user.sub;
 
   if (isAuthenticated && !user.given_name) {
     nickname = user.nickname.replace(/[ ,.]/g, "");
@@ -31,30 +34,48 @@ function Join(props) {
   }
 
   useEffect(() => {
-    loadRooms()
+    loadRooms();
   }, []);
 
   function loadRooms() {
-    API.getUserRooms({ userId: user.sub })
+    API.getRooms()
       .then(res => {
         setRooms(res.data);
       }).catch(err => console.log(err));
   };
 
-  useEffect(() => {
-    console.log(rooms)
-  }, [rooms])
+  const handleChange = (event) => {
+    setRoom(event.target.value);
+  }
+
+  const handleClick = (event) => {
+    for (let i = 0; i < rooms.length; i++) {
+      if (!room || room !== rooms[i].name) {
+        event.preventDefault();
+      } else {
+        console.log(rooms[i].name)
+      }
+    }
+  };
+
   
   return (
     <div>
-        <h1>Join a room</h1>
-
+        <div className="searchForm">
+          <div>
+            <input placeholder="Room" className="createInput mt-20" type="text" name="room" onChange={handleChange} />
+          </div>
+          <Link onClick={handleClick} to={`/chat?name=${nickname}&room=${room}`} style={{textDecoration: 'none', linkStyleType: 'none'}}>
+            <button className={'button mt-20'} type="submit">Search Room</button>
+          </Link>
+        </div>
+    
+        <h1>Join a past room</h1>
         {rooms.length ? (
           <RoomList>
             {rooms.map(room => {
-              console.log(`user sub ${user.sub}`);
-              console.log(`room.userId ${room.userId}`);
               return (
+              room.userId == user.sub && (
                 <Room key={room._id}>
                   <a href={`/chat?name=${nickname}&room=${room.name}`}>
                     <strong>
@@ -62,6 +83,7 @@ function Join(props) {
                     </strong>
                   </a>
                 </Room>
+                )
               );
             })}
           </RoomList>
