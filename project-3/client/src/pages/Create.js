@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
-import API from '../utils/API'
-import axios from 'axios';
+import API from '../utils/API';
 
 // Sets user name and room name when user signs on
 function Create() {
@@ -25,11 +24,12 @@ function Create() {
   }
 
   const handleClick = (event) => {
-    event.preventDefault();
-    console.log('room', room);
-    if (room) {
-      API.createRoom({ name: room }).then(
-        console.log(`${room} was added to the dB`)
+    if (!room) {
+      event.preventDefault();
+    } else if (room) {
+      console.log(user.sub);
+      API.createRoom({ userId: user.sub, name: room }).then(
+        console.log(`${room} was added to the dB by ${user.sub}`)
       )
         .catch(err => console.log(err));
     }

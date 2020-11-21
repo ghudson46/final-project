@@ -12,7 +12,7 @@ import Messages from '../components/Messages/Messages';
 import InfoBar from '../components/InfoBar/InfoBar';
 import Input from '../components/Input/Input';
 import VideoContainer from '../components/Video/VideoContainer';
-// import VideoCountdown from "../components/Video/VideoCountdown";
+
 
 const ENDPOINT = 'http://localhost:3001';
 
@@ -26,7 +26,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const { isAuthenticated } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
 
   // Runs once on initial render and each time location.search changes
   useEffect(() => {
@@ -37,6 +37,7 @@ const Chat = ({ location }) => {
     // Updates state with inputed room name and user name
     setRoom(room);
     setName(name)
+    
 
     // User joins the room they entered
     socket.emit('join', { name, room }, (error) => {
