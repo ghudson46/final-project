@@ -12,6 +12,7 @@ function Join(props) {
   const { user, isAuthenticated } = useAuth0();
 
   let nickname; 
+  let userId = user.sub;
 
   if (isAuthenticated && !user.given_name) {
     nickname = user.nickname.replace(/[ ,.]/g, "");
@@ -24,7 +25,7 @@ function Join(props) {
   }, []);
 
   function loadRooms() {
-    API.getUserRooms({ userId: user.sub })
+    API.getUserRooms({ userId: userId })
       .then(res => {
         setRooms(res.data);
       }).catch(err => console.log(err));
@@ -41,9 +42,8 @@ function Join(props) {
         {rooms.length ? (
           <RoomList>
             {rooms.map(room => {
-              console.log(`user sub ${user.sub}`);
-              console.log(`room.userId ${room.userId}`);
               return (
+              room.userId == user.sub && (
                 <Room key={room._id}>
                   <a href={`/chat?name=${nickname}&room=${room.name}`}>
                     <strong>
@@ -51,6 +51,7 @@ function Join(props) {
                     </strong>
                   </a>
                 </Room>
+                )
               );
             })}
           </RoomList>

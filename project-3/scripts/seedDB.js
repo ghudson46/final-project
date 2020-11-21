@@ -8,7 +8,7 @@ mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/p
 const roomSeed = [
     {
         userId: 'google-oauth2|106316170555327315614',
-        name: 'Hudson House'
+        name: 'Project 3'
     },
     {
         userId: 'google-oauth2|106316170555327315614',
@@ -35,6 +35,24 @@ const userSeed = [
     profilePic: 'https://www.thesun.co.uk/wp-content/uploads/2019/11/NINTCHDBPICT000536074229-e1572807808559.jpg',
     rooms: ['Mystery Inc', 'Scooby Snack']
   },
+]
+
+const messageSeed = [
+  {
+    message: 'This is a test',
+    sender: 'Test Man',
+    room: 'test'
+  },
+  {
+    message: 'This is a test also',
+    sender: 'Test Guy',
+    room: 'test'
+  },
+  {
+    message: 'I think this is a test too',
+    sender: 'Test Lady',
+    room: 'test2'
+  }
 ]
 
 db.Room

@@ -13,6 +13,8 @@ import InfoBar from '../components/InfoBar/InfoBar';
 import Input from '../components/Input/Input';
 import VideoContainer from '../components/Video/VideoContainer';
 
+import API from '../utils/API'
+
 
 const ENDPOINT = 'http://localhost:3001';
 
