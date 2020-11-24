@@ -3,6 +3,7 @@ const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
 const cors = require('cors');
+const Message = require('./models/message');
 
 // Express app connects to server and socket
 const app = express();
@@ -27,6 +28,7 @@ app.use(routes);
 
 // on connection to socket.io
 io.on('connect', (socket) => {
+  // runs when a user joins
   socket.on('join', ({ name, room }, callback) => {
     const { error, user } = addUser({ id: socket.id, name, room });
 
@@ -37,6 +39,12 @@ io.on('connect', (socket) => {
     socket.emit('message', { user: 'admin', text: `${user.name}, welcome to room ${user.room}.`});
     socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name} has joined!` });
 
+    Message.find({room: user.room}, (err, messages) => {
+      messages.forEach(message => {
+        socket.emit('message', { user: message.sender, text: message.message});
+      });
+    });
+
     io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
 
 
@@ -45,7 +53,16 @@ io.on('connect', (socket) => {
 
   // runs when a message is sent
   socket.on('sendMessage', (message, callback) => {
+   
+
     const user = getUser(socket.id);
+
+    const newMessage = new Message({
+      message: message,
+      sender: user.name,
+      room: user.room
+    });
+    newMessage.save();
 
     io.to(user.room).emit('message', { user: user.name, text: message });
 
