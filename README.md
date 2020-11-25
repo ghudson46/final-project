@@ -20,9 +20,9 @@ https://github.com/ghudson46/final-project
 
 ## Installation
 
-*yarn install
-*npm run seed
-*npm run start: dev
+* yarn install
+* npm run seed
+* npm run start: dev
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -35,11 +35,11 @@ https://
 
 
 ## Contributors
-Dianna Mack
-Garrett Hudson
-Jake Beeson
-Toks Desalu
-Grant Zepke
+* Dianna Mack
+* Garrett Hudson
+* Jake Beeson
+* Toks Desalu
+* Grant Zepke
 
  
 

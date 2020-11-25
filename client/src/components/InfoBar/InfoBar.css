@@ -1,0 +1,9 @@
+#roomTitle {
+    float: center;
+    color: black;
+}
+#closeButton {
+    float: right;
+    margin-top: 3px;
+    margin-right: 3px;
+}

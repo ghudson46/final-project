@@ -62,6 +62,7 @@ const Chat = ({ location }) => {
     socket.on("roomData", ({ users }) => {
       setUsers(users);
       // pull users from mongodb
+      console.log(user.picture)
     });
 }, []);
 
@@ -80,9 +81,9 @@ const Chat = ({ location }) => {
     <div className="videoContainer" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <VideoContainer />
       </div>
-    <div className="outerContainer" style={{textAlign: 'center', border: '1px solid black', padding: '30px'}}>
+    <div className="outerContainer" id="chatContainer">
       <InfoBar room={room} />
-      <div className="container" style={{height: '20rem', overflowY: 'auto', marginBottom: '4rem'}}>
+      <div className="innercontainer">
           <Messages messages={messages} name={name}/>
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>

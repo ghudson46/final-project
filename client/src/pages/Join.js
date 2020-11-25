@@ -72,9 +72,7 @@ function Join(props) {
             <button className={'button mt-20'} type="submit">Search Room</button>
           </Link>
         </div>
-
     </div>
-  </div>
   );
 }
 

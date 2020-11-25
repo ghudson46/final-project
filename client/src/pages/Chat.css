@@ -1,0 +1,36 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #272833;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:  #272833;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar:hover {
+    background:  #272833;
+  }
+
+  #chatContainer {
+    float: right;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #ebebeb;
+  }
+
+  .innercontainer {
+    background-color: #ffffff;
+    height: '20rem';
+    overflow-y: 'auto';
+    margin-bottom: '4rem';
+    margin-right: 4px;
+    margin-left: 4px;
+    border-radius: 10px;
+  }
