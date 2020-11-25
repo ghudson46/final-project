@@ -62,6 +62,7 @@ const Chat = ({ location }) => {
     socket.on("roomData", ({ users }) => {
       setUsers(users);
       // pull users from mongodb
+      console.log(user.picture)
     });
 }, []);
 
