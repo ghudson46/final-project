@@ -1,0 +1,15 @@
+{
+    "short_name": "KickBack",
+    "name": "KickBack",
+    "icons": [
+      {
+        "src": "https://www.freelogodesign.org/file/app/client/thumb/772cc534-caa2-46f4-b99e-537d19ccd4fb_200x200.png?1606320117706",
+        "sizes": "200x200",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#000000"
+  }
