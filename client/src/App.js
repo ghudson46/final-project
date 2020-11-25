@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
+
 import NavBar from './components/NavBar/NavBar'
 import Loading from './components/Loading/Loading'
 import Home from './pages/Home'
@@ -10,7 +11,7 @@ import Join from './pages/Join'
 import Chat from './pages/Chat'
 import Create from './pages/Create'
 
-import "./app.css";
+import "./app.css"
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
   return (
       <div id="app">
-        <h1>VideoParty</h1>
+      <h1 style={{color: '#31e89f', textShadow: '1px 1px #31e8e8', fontWeight: '600'}}>KickBack</h1>
         <NavBar />
         <div className="container">
           <Switch>
@@ -29,6 +30,7 @@ function App() {
             <Route path='/join' component={Join} />
             <Route path='/chat' component={Chat} />
             <Route path='/create' component={Create} />
+            <Route path='*' component={Home} />
           </Switch>
         </div>
       </div>

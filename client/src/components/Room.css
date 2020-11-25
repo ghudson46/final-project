@@ -2,6 +2,7 @@
     text-decoration: none;
     position: relative;
     left: 30%;
+    color: #31e89f;
 }
 
 .roomLink:hover {
@@ -10,5 +11,4 @@
 
 a:hover {
     text-decoration: none;
-    color: white;
 }

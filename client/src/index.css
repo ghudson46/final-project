@@ -17,6 +17,21 @@ a:hover {
   color: white;
 }
 
+button {
+  background-color: #000;
+  color: #31e89f;
+  border-radius: 1rem;
+  border: .05px solid #31e8e8;
+  margin: .5rem 0 .5rem 0;
+}
+
+button:hover {
+  background-color: #353839;
+  color: #31e89f;
+  border-radius: 1rem;
+  border: .05px solid #31e8e8;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

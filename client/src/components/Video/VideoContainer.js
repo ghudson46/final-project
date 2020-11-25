@@ -37,7 +37,7 @@ class VideoContainer extends React.Component {
             )
         :
             (
-            <div className='ui container' style={{marginTop: '1em'}}>
+            <div className='ui container' style={{marginTop: '1em', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
                     <SearchBar handleFormSubmit={this.handleSubmit}/>
                     <div className='ui grid'>
                         <div className="ui row">

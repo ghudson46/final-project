@@ -1,5 +1,7 @@
 import React from "react";
 
+import './Video.css'
+
 const VideoDetail = ({ video }) => {
   if (!video) {
     return <div>
@@ -10,11 +12,11 @@ const VideoDetail = ({ video }) => {
   console.log(typeof video);
   return (
     <div>
-      <div className="ui embed" style={{textAlign: 'center'}}>
-        <iframe src={videoSrc} allowFullScreen title="Video player" style={{height: '25rem', width: '50rem', marginTop: '2rem'}} />
+      <div className="ui embed" style={{textAlign: 'center', position: 'relative', left: '10%'}}>
+        <iframe className="video-responsive" src={videoSrc} allowFullScreen title="Video player" style={{height: '20rem', width: '40rem', marginTop: '2rem', maxWidth: '100%', maxHeight: '45%'}} />
       </div>
       <div className="ui segment">
-        <h2 className="ui header">{video.snippet.title}</h2>
+        <h4 className="video">{video.snippet.title}</h4>
         {/* <p style={{width: '20%'}}>{video.snippet.description}</p> */}
       </div>
     </div>
