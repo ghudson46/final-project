@@ -31,7 +31,7 @@ function Profile() {
             setRooms(res.data);
           }).catch(err => console.log(err));
       };
-    
+
 
     return (
         isAuthenticated ? (

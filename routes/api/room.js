@@ -11,5 +11,6 @@ router.route('/')
 router
     .route('/:id')
     .get(roomsController.findById)
+    .delete(roomsController.delete)
 
 module.exports = router;
