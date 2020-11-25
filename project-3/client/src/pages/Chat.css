@@ -17,3 +17,9 @@
   ::-webkit-scrollbar:hover {
     background:  #272833;
   }
+
+  #chatContainer {
+    float: right;
+    border: 1px solid transparent;
+    border-radius: 10px;
+  }
