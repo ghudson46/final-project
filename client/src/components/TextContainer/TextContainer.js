@@ -9,11 +9,8 @@ const TextContainer = ({ users }) => (
       users
         ? (
           <div>
-<<<<<<< HEAD
             <h3>Friends in room:</h3>
-=======
             <h1 id="txtColor">People currently chatting:</h1>
->>>>>>> main
             <div className="activeContainer">
               <h3>
                 {users.map(({name}) => (

@@ -7,7 +7,6 @@ import "./InfoBar.css";
 
 // Proives users with info on current room
 const InfoBar = ({ room }) => (
-<<<<<<< HEAD
   <div className="infoBar" style={{textAlign: 'center'}}>
     <div className="leftInnerContainer">
       <h3 id="roomTitle">ROOM: {room}</h3>
@@ -15,12 +14,9 @@ const InfoBar = ({ room }) => (
       {/* <img className="onlineIcon" src={onlineIcon} alt="online icon" /> */}
     </div>
     <div className="rightInnerContainer">
-
-=======
   <div className="infoBar">
     <div>
       <h3 id="roomTitle">ROOM: {room} <a href="/"><img src={closeIcon} alt="close icon"  id="closeButton"/></a></h3>
->>>>>>> main
     </div>
   </div>
 );
