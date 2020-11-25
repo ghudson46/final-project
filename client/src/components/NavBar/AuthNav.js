@@ -7,10 +7,10 @@ import Nav from 'react-bootstrap/Nav'
 function AuthNav() {
     return (
         <div>
-            <Nav fill variant="pills" style={{display: 'fllex', justifyContent: 'center'}}>
+            {/* <Nav fill variant="pills" style={{display: 'fllex', justifyContent: 'center'}}>
                 <LoginButton />
                 <SignupButton />
-            </Nav>
+            </Nav> */}
         </div>
     )
 }

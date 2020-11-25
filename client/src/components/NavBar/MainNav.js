@@ -19,9 +19,6 @@ function MainNav() {
             <Nav.Item>
                 <Nav.Link href="/create" className={location.pathname === "/create" && "active"}>Create</Nav.Link>
             </Nav.Item>
-            <Nav.Item>
-                <Nav.Link><LogoutButton /></Nav.Link>
-            </Nav.Item>
         </Nav>
     )
 }

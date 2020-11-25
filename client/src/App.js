@@ -10,7 +10,7 @@ import Join from './pages/Join'
 import Chat from './pages/Chat'
 import Create from './pages/Create'
 
-import "./app.css";
+import "./app.css"
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
 
   return (
       <div id="app">
-        <h1>VideoParty</h1>
+      <h1>KickBack</h1>
         <NavBar />
         <div className="container">
           <Switch>
