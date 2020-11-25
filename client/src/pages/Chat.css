@@ -23,3 +23,14 @@
     border: 1px solid transparent;
     border-radius: 10px;
   }
+
+  @media screen and (max-width: 560px) {
+    .videoContainer {
+      margin-top: -2rem;
+    }
+
+    #chatContainer {
+      margin-top: -2rem;
+    }
+
+  }

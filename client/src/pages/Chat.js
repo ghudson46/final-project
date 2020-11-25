@@ -13,7 +13,9 @@ import InfoBar from '../components/InfoBar/InfoBar';
 import Input from '../components/Input/Input';
 import VideoContainer from '../components/Video/VideoContainer';
 
-import API from '../utils/API'
+import './Chat.css';
+
+
 
 
 const ENDPOINT = 'http://localhost:3001';
@@ -86,12 +88,12 @@ const Chat = ({ location }) => {
               <VideoContainer />
         </div>
 
-        <div className="outerContainer" id="chatContainer" style={{height: '20rem', maxWidth: '100%', border: '1px solid #31e89f', position: 'relative', left: '2%', marginTop: '-5rem'}}>
+        <div className="outerContainer" id="chatContainer" style={{height: '16rem', maxWidth: '100%', border: '1px solid #31e89f', position: 'relative', left: '2%', marginTop: '-5rem'}}>
 
-          <div className="container" style={{height: '20rem', overflowY: 'auto', marginBottom: '4rem', display: 'flex', flexDirection: 'column-reverse'}}>
+          <div className="container" style={{height: '15rem', overflowY: 'auto', marginBottom: '1rem', display: 'flex', flexDirection: 'column-reverse'}}>
               <Messages messages={messages} name={name} img={user.picture}/>
           </div>
-          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} style={{marginTop: '100rem'}}/>
 
           <TextContainer users={users}/>
         </div>

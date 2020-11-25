@@ -13,7 +13,7 @@ const VideoDetail = ({ video }) => {
   return (
     <div>
       <div className="ui embed" style={{textAlign: 'center', position: 'relative', left: '10%'}}>
-        <iframe className="video-responsive" src={videoSrc} allowFullScreen title="Video player" style={{height: '20rem', width: '40rem', marginTop: '2rem'}} />
+        <iframe className="video-responsive" src={videoSrc} allowFullScreen title="Video player" style={{height: '20rem', width: '40rem', marginTop: '2rem', maxWidth: '100%', maxHeight: '45%'}} />
       </div>
       <div className="ui segment">
         <h4 className="video">{video.snippet.title}</h4>
