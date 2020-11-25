@@ -41,7 +41,7 @@ function Create() {
       <div className="joinInnerContainer">
         <h1 className="heading">Create A Room</h1>
         <div>
-          <p>welcome {nickname}! Enter the name of the room you wish to create!</p>
+          <p>Welcome {nickname}! Enter the name of the room you wish to create!</p>
         </div>
         <div>
           <input placeholder="Room" className="createInput mt-20" type="text" name="room" onChange={handleChange} />

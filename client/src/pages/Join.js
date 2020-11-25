@@ -65,6 +65,7 @@ function Join(props) {
     <div>
         <div className="searchForm">
         <h1>Search for an existing room</h1>
+        <p>Welcome {nickname}! Enter the name of the room you wish to search for!</p>
           <div>
             <input placeholder="Room" className="createInput mt-20" type="text" name="room" onChange={handleChange} />
           </div>

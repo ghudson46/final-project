@@ -5,6 +5,8 @@ import Room from '../components/Room';
 import API from '../utils/API';
 import '../components/Room';
 
+import './Profile.css';
+
 function Profile() {
     const [rooms, setRooms] = useState([]);
     const [room, setRoom] = useState('');
@@ -33,14 +35,14 @@ function Profile() {
 
     return (
         isAuthenticated ? (
-        <span style={{display:'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
+        <span  className="profileContainer" style={{display:'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
             <div className="userInfo">
                 <img src={user.picture} alt={user.name} style={{borderRadius: '50%', height: '10rem', width: '10rem'}}/>
                 <h2>{user.name}</h2>
                 <p>{user.email}</p>
             </div>
 
-            <div className="userRooms">
+            <div className="userRooms" style={{listStyleType: 'none'}}>
                 <h1>Your Rooms</h1>
                 {rooms.length ? (
                 <RoomList>

@@ -33,16 +33,4 @@
       margin-top: -2rem;
     }
 
-    background-color: #ebebeb;
-  }
-
-  .innercontainer {
-    background-color: #ffffff;
-    height: '20rem';
-    overflow-y: 'auto';
-    margin-bottom: '4rem';
-    margin-right: 4px;
-    margin-left: 4px;
-    border-radius: 10px;
-
   }

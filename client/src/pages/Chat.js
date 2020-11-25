@@ -36,11 +36,13 @@ const Chat = ({ location }) => {
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
+    let capitalName = name.charAt(0).toUpperCase() + name.slice(1);
+
     socket = io(ENDPOINT);
 
     // Updates state with inputed room name and user name
     setRoom(room);
-    setName(name)
+    setName(capitalName)
     
 
     // User joins the room they entered

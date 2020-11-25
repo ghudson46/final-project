@@ -19,10 +19,8 @@ const InfoBar = ({ room }) => (
       <h3 id="roomTitle">ROOM: {room} <a href="/"><img src={closeIcon} alt="close icon"  id="closeButton"/></a></h3>
     </div>
   </div>
+  </div>
+  </div>
 );
 
 export default InfoBar;
-
-// Unused asset. Save incase use needed later:
-// Green dot online icon.
-// <img className="onlineIcon" src={onlineIcon} alt="online icon" />

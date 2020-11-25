@@ -10,13 +10,13 @@ const TextContainer = ({ users }) => (
         ? (
           <div>
             <h3>Friends in room:</h3>
-            <h1 id="txtColor">People currently chatting:</h1>
+            <h1 id="txtColor" style={{color: 'white'}}>People currently chatting:</h1>
             <div className="activeContainer">
-              <h3>
+              <h3 style={{color: 'white'}}>
                 {users.map(({name}) => (
                   <div key={name} className="activeItem" id="txtColor">
                     {name}
-                    <img alt="Online Icon" src={onlineIcon}/>
+                    <img alt="Online Icon" src={onlineIcon} style={{marginLeft: '10px'}}/>
                   </div>
                 ))}
               </h3>
