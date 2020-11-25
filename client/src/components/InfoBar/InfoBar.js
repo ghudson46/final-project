@@ -8,15 +8,14 @@ import "./InfoBar.css";
 // Proives users with info on current room
 const InfoBar = ({ room }) => (
   <div className="infoBar">
-    <div className="leftInnerContainer">
-      <h3 id="roomTitle">ROOM: {room}</h3>
-      <a href="/"><img src={closeIcon} alt="close icon"  id="closeButton"/></a>
-      {/* <img className="onlineIcon" src={onlineIcon} alt="online icon" /> */}
-    </div>
-    <div className="rightInnerContainer">
-
+    <div>
+      <h3 id="roomTitle">ROOM: {room} <a href="/"><img src={closeIcon} alt="close icon"  id="closeButton"/></a></h3>
     </div>
   </div>
 );
 
 export default InfoBar;
+
+// Unused asset. Save incase use needed later:
+// Green dot online icon.
+// <img className="onlineIcon" src={onlineIcon} alt="online icon" />
