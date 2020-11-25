@@ -3,6 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import RoomList from '../components/RoomList';
 import Room from '../components/Room';
 import API from '../utils/API';
+import '../components/Room';
 
 function Profile() {
     const [rooms, setRooms] = useState([]);
@@ -44,8 +45,8 @@ function Profile() {
                 return (
                 room.userId == user.sub && (
                     <Room key={room._id}>
-                    <a href={`/chat?name=${nickname}&room=${room.name}`}>
-                        <strong>
+                    <a href={`/chat?name=${nickname}&room=${room.name}`} style={{textDecoration: 'none'}}>
+                        <strong style={{textDecoration: 'none'}}>
                         {room.name}
                         </strong>
                     </a>
