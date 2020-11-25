@@ -13,7 +13,9 @@ import InfoBar from '../components/InfoBar/InfoBar';
 import Input from '../components/Input/Input';
 import VideoContainer from '../components/Video/VideoContainer';
 
-import API from '../utils/API'
+import './Chat.css';
+
+
 
 
 const ENDPOINT = 'http://localhost:3001';
@@ -77,6 +79,31 @@ const Chat = ({ location }) => {
   return (
     isAuthenticated ? (
       <>
+<<<<<<< HEAD
+      <h2 style={{marginTop: '-5rem'}}>{room}</h2>
+      <p>Search for a video by name or keyword</p>
+        <span style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', flexWrap: 'wrap'}}>
+        {/* <InfoBar room={room} /> */}
+
+        <div className="videoContainer" style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', maxWidth: '90%', marginTop: '-1rem', marginBottom: '5rem'}}>
+              <VideoContainer />
+        </div>
+
+        <div className="outerContainer" id="chatContainer" style={{height: '16rem', maxWidth: '100%', border: '1px solid #31e89f', position: 'relative', left: '2%', marginTop: '-5rem'}}>
+
+          <div className="container" style={{height: '15rem', overflowY: 'auto', marginBottom: '1rem', display: 'flex', flexDirection: 'column-reverse'}}>
+              <Messages messages={messages} name={name} img={user.picture}/>
+          </div>
+          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} style={{marginTop: '100rem'}}/>
+
+          <TextContainer users={users}/>
+        </div>
+
+        </span>
+    
+ 
+      </>
+=======
     <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap'}}>
     <div className="videoContainer" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <VideoContainer />
@@ -93,6 +120,7 @@ const Chat = ({ location }) => {
     <div style={{margin: '5rem 15rem 0 0'}}>
     </div>
     </>
+>>>>>>> main
     ) :
     (
       <h1>User is not authenticated</h1>

@@ -6,18 +6,18 @@ import LogoutButton from '../Authentication//LogoutButton'
 function MainNav() {
     const location = useLocation();
     return (
-        <Nav fill variant="pills" className="justify-content-end" style={{display: 'fllex', justifyContent: 'space-around'}}>
+        <Nav fill className="justify-content-end" style={{display: 'fllex', justifyContent: 'space-around'}}>
             <Nav.Item>
-                <Nav.Link href="/" className={location.pathname === "/" && "active"}>Home</Nav.Link>
+                <Nav.Link href="/" className={location.pathname === "*" && "active"}><button>Home</button></Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/profile" className={location.pathname === "/profile" && "active"}>Profile</Nav.Link>
+                <Nav.Link href="/profile" className={location.pathname === "/profile" && "active"}><button>Profile</button></Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/join" className={location.pathname === "/join" && "active"}>Join</Nav.Link>
+                <Nav.Link href="/join" className={location.pathname === "/join" && "active"}><button>Join</button></Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/create" className={location.pathname === "/create" && "active"}>Create</Nav.Link>
+                <Nav.Link href="/create" className={location.pathname === "/create" && "active"}><button>Create</button></Nav.Link>
             </Nav.Item>
         </Nav>
     )
