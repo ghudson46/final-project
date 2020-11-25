@@ -1,0 +1,14 @@
+.roomLink {
+    text-decoration: none;
+    position: relative;
+    left: 30%;
+}
+
+.roomLink:hover {
+    background-color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
