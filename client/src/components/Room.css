@@ -12,3 +12,7 @@
 a:hover {
     text-decoration: none;
 }
+
+.deleteBtn {
+    background-color: red;
+}

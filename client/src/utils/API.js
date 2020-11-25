@@ -9,6 +9,9 @@ export default {
   getRoom: function(id) {
     return axios.get("/api/rooms/" + id);
   },
+  deleteRoom : function(id) {
+    return axios.delete('/api/rooms' + id);
+  },
   getUserRooms: function() {
     return axios.get('/api/rooms');
   },

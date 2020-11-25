@@ -33,5 +33,15 @@ module.exports = {
       .create(req.body)
       .then(dbModel =>  res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  delete: function(req, res) {
+    db.Room
+      .deleteOne({_id: req.params.id})
+      .then(() => {
+        res.status(200).json({
+          message: 'Deleted'
+        });
+      })
+      .catch(err => res.status(422).json(err));
   }
 };

@@ -10,7 +10,6 @@ const TextContainer = ({ users }) => (
         ? (
           <div>
             <h3>Friends in room:</h3>
-            <h1 id="txtColor" style={{color: 'white'}}>People currently chatting:</h1>
             <div className="activeContainer">
               <h3 style={{color: 'white'}}>
                 {users.map(({name}) => (
