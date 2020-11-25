@@ -27,3 +27,7 @@ and (max-device-width: 500px) {
     width: 100%;
   }
 }
+
+#root{
+  width: 100%;
+}

@@ -19,16 +19,19 @@
 https://github.com/ghudson46/final-project
 
 ## Installation
-This application can be accessed and used through Heroku, following the link below.
 
-https://
+*yarn install
+*npm run seed
+*npm run start: dev
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Demo
+This application can be accessed and used through Heroku, following the link below.
 
+https://
 
 
 ## Contributors

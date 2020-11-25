@@ -10,6 +10,9 @@ import Join from './pages/Join'
 import Chat from './pages/Chat'
 import Create from './pages/Create'
 
+import "./app.css";
+
+
 function App() {
   const { isLoading } = useAuth0();
 

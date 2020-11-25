@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from 'react';
+
+
 import { useAuth0 } from '@auth0/auth0-react';
 import API from '../utils/API';
 import { Link } from 'react-router-dom';
 
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+
+import './Join.css'
+
+
 // Sets user name and room name when user signs on
 function Join(props) {
+ 
+
   // const [name, setName] = useState('');
   const [rooms, setRooms] = useState([]);
   const [room, setRoom] = useState('');
@@ -61,7 +72,9 @@ function Join(props) {
             <button className={'button mt-20'} type="submit">Search Room</button>
           </Link>
         </div>
+
     </div>
+  </div>
   );
 }
 
