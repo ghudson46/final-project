@@ -79,6 +79,7 @@ const Chat = ({ location }) => {
   return (
     isAuthenticated ? (
       <>
+<<<<<<< HEAD
       <h2 style={{marginTop: '-5rem'}}>{room}</h2>
       <p>Search for a video by name or keyword</p>
         <span style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', flexWrap: 'wrap'}}>
@@ -102,6 +103,24 @@ const Chat = ({ location }) => {
     
  
       </>
+=======
+    <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap'}}>
+    <div className="videoContainer" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <VideoContainer />
+      </div>
+    <div className="outerContainer" id="chatContainer">
+      <InfoBar room={room} />
+      <div className="innercontainer">
+          <Messages messages={messages} name={name}/>
+          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+      </div>
+      <TextContainer users={users}/>
+    </div>
+    </span>
+    <div style={{margin: '5rem 15rem 0 0'}}>
+    </div>
+    </>
+>>>>>>> main
     ) :
     (
       <h1>User is not authenticated</h1>
