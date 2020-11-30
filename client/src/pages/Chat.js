@@ -9,7 +9,6 @@ import './Chat.css'
 // Components
 import TextContainer from '../components/TextContainer/TextContainer';
 import Messages from '../components/Messages/Messages';
-import InfoBar from '../components/InfoBar/InfoBar';
 import Input from '../components/Input/Input';
 import VideoContainer from '../components/Video/VideoContainer';
 

@@ -5,9 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import API from '../utils/API';
 import { Link } from 'react-router-dom';
 
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
+import Modal from './Modal';
 
 import './Join.css'
 
@@ -19,11 +17,11 @@ function Join(props) {
   // const [name, setName] = useState('');
   const [rooms, setRooms] = useState([]);
   const [room, setRoom] = useState('');
+  const [modalState, setModalState] = useState(false);
 
   const { user, isAuthenticated } = useAuth0();
 
   let nickname; 
-  let userId = user.sub;
 
   if (isAuthenticated && !user.given_name) {
     nickname = user.nickname.replace(/[ ,.]/g, "");
@@ -53,6 +51,7 @@ function Join(props) {
       }
       if (room !== rooms[i].name) {
         event.preventDefault();
+        setModalState(true);
       } else {
         console.log(rooms[i].name);
         window.location.replace(`http://localhost:3000/chat?name=${nickname}&room=${room}`);
@@ -72,6 +71,7 @@ function Join(props) {
           <Link onClick={handleClick} to={`/chat?name=${nickname}&room=${room}`} style={{textDecoration: 'none', linkStyleType: 'none'}}>
             <button className={'button mt-20'} type="submit">Search Room</button>
           </Link>
+          <Modal show={modalState}/>
         </div>
     </div>
   );
