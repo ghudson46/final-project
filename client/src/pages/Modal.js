@@ -5,6 +5,11 @@ export default class Modal extends React.Component {
       if (!this.props.show) {
         return null;
       }
-      return <div style={{color: 'red'}}>That search yielded no results. Create the room in the 'create tab'</div>
+      return (
+        <>
+          <div style={{color: 'red'}}>There are no rooms that match that name. Click the button below to create it!</div>
+          <a href="/create"><button>create</button></a>
+        </>
+      ) 
   }
 }
