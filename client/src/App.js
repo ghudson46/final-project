@@ -26,10 +26,10 @@ function App() {
         <div className="container">
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/profile' component={Profile} />
-            <Route path='/join' component={Join} />
-            <Route path='/chat' component={Chat} />
-            <Route path='/create' component={Create} />
+            <Route exact path='/profile' component={Profile} />
+            <Route exact path='/join' component={Join} />
+            <Route exact path='/chat' component={Chat} />
+            <Route exact path='/create' component={Create} />
             <Route path='*' component={Home} />
           </Switch>
         </div>

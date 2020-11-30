@@ -87,7 +87,13 @@ if (process.env.NODE_ENV === "production") {
 
 // mongodb connection
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/project3"
+  process.env.MONGODB_URI || "mongodb://localhost/project3",
+     {
+       useNewUrlParser: true,
+       useUnifiedTopology: true,
+       useCreateIndex: true,
+       useFindAndModify: false
+     }
 );
 
 // mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',  { useNewUrlParser: true });

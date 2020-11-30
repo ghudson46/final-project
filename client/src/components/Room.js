@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import API from '../utils/API';
 
@@ -9,12 +9,14 @@ library.add( faTrash )
 
 function Room({ children, room }) {
 
+  const [status, setStatus] = useState(false);
+
   const handleClick = () => {
-    API.deleteRoom(room._id )
-      .then(res => {
-        console.log(room._id);
-        console.log(res);
-      }).catch(err => console.log(err));
+    API.deleteRoom(room._id)
+      .then(() => {
+        window.location.reload();
+        })
+        .catch(err => console.log(err));
   };
   return (
     <div style={{display: 'flex', flexDirection: 'row'}}>
