@@ -48,7 +48,7 @@ function Profile() {
                     {rooms.map(room => {
                     return (
                     room.userId === user.sub && (
-                        <Room key={room._id}>
+                        <Room key={room._id} room={room}>
                         <a href={`/chat?name=${nickname}&room=${room.name}`} style={{textDecoration: 'none'}}>
                             <strong style={{textDecoration: 'none'}}>
                             {room.name}

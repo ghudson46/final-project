@@ -28,7 +28,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    console.log("req.body", req.body);
     db.Room
       .create(req.body)
       .then(dbModel =>  res.json(dbModel))
@@ -38,7 +37,7 @@ module.exports = {
     db.Room
       .findById({_id: req.params.id})
       .then(room => room.remove())
-      .then(allrooms => res.json(allrooms))
+      .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
 };
