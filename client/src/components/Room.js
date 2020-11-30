@@ -7,12 +7,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 library.add( faTrash )
 
-function Room({ children }) {
+function Room({ children, room }) {
 
   const handleClick = () => {
-    API.deleteRoom()
-      .then(res => {
-        console.log('room deleted')
+    API.deleteRoom(room._id)
+      .then(() => {
+        console.log(room.name)
       }).catch(err => console.log(err));
   };
   return (
