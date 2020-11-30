@@ -14,7 +14,7 @@ const TextContainer = ({ users }) => (
               <h3 style={{color: 'white'}}>
                 {users.map(({name}) => (
                   <div key={name} className="activeItem" id="txtColor">
-                    {name}
+                    {name.charAt(0).toUpperCase() + name.slice(1)}
                     <img alt="Online Icon" src={onlineIcon} style={{marginLeft: '10px'}}/>
                   </div>
                 ))}
