@@ -81,7 +81,7 @@ const Chat = ({ location }) => {
   return (
     isAuthenticated ? (
       <>
-      <h2 style={{marginTop: '-5rem'}}>{room}</h2>
+      <h2 style={{marginTop: '-5rem', color: '#31e89f'}}>{room}</h2>
       <p>Search for a video by name or keyword</p>
         <span style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', flexWrap: 'wrap'}}>
         {/* <InfoBar room={room} /> */}
