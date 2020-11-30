@@ -25,11 +25,11 @@ function App() {
         <NavBar />
         <div className="container">
           <Switch>
-            <Route exact path='/' exact component={Home} />
-            <Route path='/profile' exact component={Profile} />
-            <Route path='/join' exact component={Join} />
-            <Route path='/chat' exact component={Chat} />
-            <Route path='/create' exact component={Create} />
+            <Route exact path='/' component={Home} />
+            <Route exact path='/profile' component={Profile} />
+            <Route exact path='/join' component={Join} />
+            <Route exact path='/chat' component={Chat} />
+            <Route exact path='/create' component={Create} />
             <Route path='*' component={Home} />
           </Switch>
         </div>

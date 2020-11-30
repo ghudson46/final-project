@@ -24,7 +24,8 @@
     "mongoose": "^5.10.15",
     "nodemon": "^2.0.6",
     "socket.io": "^2.3.0",
-    "v-response": "^1.1.0"
+    "v-response": "^1.1.0",
+    "workbox-cli": "^6.0.0"
   },
   "devDependencies": {},
   "description": ""
