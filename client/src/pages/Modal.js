@@ -8,7 +8,7 @@ export default class Modal extends React.Component {
       return (
         <>
           <div style={{color: 'red'}}>There are no rooms that match that name. Click the button below to create it!</div>
-          <a href="/create"><button>create</button></a>
+          <a href="/create"><button>Create your room</button></a>
         </>
       ) 
   }
