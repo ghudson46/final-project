@@ -9,11 +9,10 @@ import './Profile.css';
 
 function Profile() {
     const [rooms, setRooms] = useState([]);
-    const [room, setRoom] = useState('');
+    // const [room, setRoom] = useState('');
     const { user, isAuthenticated } = useAuth0();
 
     let nickname; 
-    let userId = user.sub;
 
     if (isAuthenticated && !user.given_name) {
         nickname = user.nickname.replace(/[ ,.]/g, "");
@@ -48,7 +47,7 @@ function Profile() {
                 <RoomList>
                     {rooms.map(room => {
                     return (
-                    room.userId == user.sub && (
+                    room.userId === user.sub && (
                         <Room key={room._id}>
                         <a href={`/chat?name=${nickname}&room=${room.name}`} style={{textDecoration: 'none'}}>
                             <strong style={{textDecoration: 'none'}}>

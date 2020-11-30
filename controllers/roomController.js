@@ -34,14 +34,11 @@ module.exports = {
       .then(dbModel =>  res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  delete: function(req, res) {
+  remove: function(req, res) {
     db.Room
-      .deleteOne({_id: req.params.id})
-      .then(() => {
-        res.status(200).json({
-          message: 'Deleted'
-        });
-      })
+      .findById({_id: req.params.id})
+      .then(room => room.remove())
+      .then(allrooms => res.json(allrooms))
       .catch(err => res.status(422).json(err));
   }
 };

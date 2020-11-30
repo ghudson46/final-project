@@ -12,7 +12,7 @@ function Room({ children }) {
   const handleClick = () => {
     API.deleteRoom()
       .then(res => {
-        console.log(res)
+        console.log('room deleted')
       }).catch(err => console.log(err));
   };
   return (

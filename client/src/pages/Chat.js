@@ -9,7 +9,6 @@ import './Chat.css'
 // Components
 import TextContainer from '../components/TextContainer/TextContainer';
 import Messages from '../components/Messages/Messages';
-import InfoBar from '../components/InfoBar/InfoBar';
 import Input from '../components/Input/Input';
 import VideoContainer from '../components/Video/VideoContainer';
 
@@ -81,7 +80,7 @@ const Chat = ({ location }) => {
   return (
     isAuthenticated ? (
       <>
-      <h2 style={{marginTop: '-5rem'}}>{room}</h2>
+      <h2 style={{marginTop: '-5rem', color: '#31e89f'}}>{room}</h2>
       <p>Search for a video by name or keyword</p>
         <span style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', flexWrap: 'wrap'}}>
         {/* <InfoBar room={room} /> */}
