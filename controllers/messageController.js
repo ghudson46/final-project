@@ -19,5 +19,11 @@ module.exports = {
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  remove: function(req, res) {
+    db.Message
+      .deleteMany({ room: req.params.room })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 };

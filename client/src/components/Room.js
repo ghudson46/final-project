@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import API from '../utils/API';
 
@@ -8,8 +8,6 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 library.add( faTrash )
 
 function Room({ children, room }) {
-
-  const [status, setStatus] = useState(false);
 
   const handleClick = () => {
     API.deleteRoom(room._id)
