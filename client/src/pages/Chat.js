@@ -2,7 +2,11 @@
 import React, { useState, useEffect } from "react";
 import queryString from 'query-string';
 import io from "socket.io-client";
-import { useAuth0 } from '@auth0/auth0-react'
+import { useAuth0 } from '@auth0/auth0-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
 
 import './Chat.css'
 
@@ -13,6 +17,7 @@ import Input from '../components/Input/Input';
 import VideoContainer from '../components/Video/VideoContainer';
 
 import './Chat.css';
+import API from "../utils/API";
 
 
 
@@ -30,6 +35,8 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const { user, isAuthenticated } = useAuth0();
+
+  library.add( faTrash )
 
   // Runs once on initial render and each time location.search changes
   useEffect(() => {
@@ -76,13 +83,26 @@ const Chat = ({ location }) => {
     }
   }
 
+  const handleClick = (event) => {
+    if (window.confirm('are you sure you want to delete all previous messages?')) {
+      API.deleteMessages(room)
+      .then(() => {
+        // window.location.reload();
+        console.log(`messages in ${room} were deleted`)
+      })
+      .catch(err => console.log(err));
+    } else {
+      event.preventDefault();
+    }
+    
+  }
+
   return (
     isAuthenticated ? (
       <>
       <h2 style={{marginTop: '-5rem', color: '#31e89f'}}>{room}</h2>
       <p>Search for a video by name or keyword</p>
         <span style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', flexWrap: 'wrap'}}>
-        {/* <InfoBar room={room} /> */}
 
         <div className="videoContainer" style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', maxWidth: '90%', marginTop: '-1rem', marginBottom: '5rem'}}>
               <VideoContainer />
@@ -94,6 +114,7 @@ const Chat = ({ location }) => {
               <Messages messages={messages} name={name} img={user.picture}/>
           </div>
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} style={{marginTop: '100rem'}}/>
+          <button onClick={handleClick} > <FontAwesomeIcon icon={faTrash} style={{color: 'white', cursor: 'pointer', margin: '0 .5rem .1rem 0', height: '1rem', width: '1rem'}} />Delete message history</button>
 
           <TextContainer users={users}/>
         </div>
