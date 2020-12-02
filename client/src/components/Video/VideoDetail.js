@@ -15,7 +15,7 @@ const VideoDetail = ({ video }) => {
         <iframe className="video-responsive" src={videoSrc} allowFullScreen title="Video player" style={{height: '20rem', width: '40rem', marginTop: '2rem', maxWidth: '100%', maxHeight: '45%'}} />
       </div>
       <div className="ui segment">
-        <h4 className="video">{video.snippet.title}</h4>
+        {/* <h4 className="video" style={{color: 'white'}}>{video.snippet.title}</h4> */}
         {/* <p style={{width: '20%'}}>{video.snippet.description}</p> */}
       </div>
     </div>

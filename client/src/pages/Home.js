@@ -19,7 +19,7 @@ function Home() {
         <div style={{display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: "center"}}>
                 <Col sm={6}><Image src={logo} height={300} width={330}/></Col>
                 <Col sm={6}>
-                <p>KickBack is the perfect platform to hangout with your friends, without being in the same room. Watch a movie, share a youtube video, or simply just chat in a private room. <span style={{color: '#31e89f'}}><br></br>Just because you have to be 6 feet apart, doesn't mean you have to be apart.</span>
+                <p>KickBack is the perfect platform to hangout with your friends, without being in the same room. Watch a movie, share a youtube video, or simply just chat in a private room. <span style={{color: '#31e89f'}}>Just because you have to be 6 feet apart, doesn't mean you have to be apart.</span>
                 </p>
                 {isAuthenticated ? (
                     <LogoutButton />
