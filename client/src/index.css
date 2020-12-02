@@ -4,7 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: #272833;
+  background-image: url(./img/background2.jpg);
   font-size: 15pt;
   font-weight: 100;
   line-height: 1.75em;
