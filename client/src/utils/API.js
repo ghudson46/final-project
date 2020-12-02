@@ -19,8 +19,8 @@ export default {
   getMessages: function() {
     return axios.get("/api/messages");
   },
-  deleteMessages: function(room) {
-    return axios.delete('/api/messages/remove/' + room);
+  deleteMessages: function(id) {
+    return axios.delete('/api/messages/' + id);
   },
   // gets the message with the given id
   getMessage: function(id) {

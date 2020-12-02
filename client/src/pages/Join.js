@@ -53,7 +53,6 @@ function Join(props) {
         event.preventDefault();
         setModalState(true);
       } else {
-        console.log(rooms[i].name);
         window.location.replace(`http://localhost:3000/chat?name=${nickname}&room=${room}`);
       }
     }

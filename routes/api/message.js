@@ -6,7 +6,7 @@ router.route('/')
     .get(messageController.findAll)
     .post(messageController.create)
 
-router.route('/remove/:room')
+router.route('/:room')
     .delete(messageController.remove);
 
 router.route('/:id')
