@@ -33,7 +33,7 @@ function Profile() {
 
 
     return (
-        isAuthenticated ? (
+        user ? (
         <span  className="profileContainer" style={{display:'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
             <div className="userInfo">
                 <img src={user.picture} alt={user.name} style={{borderRadius: '50%', height: '10rem', width: '10rem'}}/>
@@ -67,7 +67,7 @@ function Profile() {
         )
         : (
         <h1>
-        user is not authenticated 
+        You are not logged in 
         </h1>
         )
     )
