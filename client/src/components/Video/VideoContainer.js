@@ -23,7 +23,6 @@ class VideoContainer extends React.Component {
             loading: false,
             videos: response.data.items
         })
-        console.log("this is resp",response);
     };
     handleVideoSelect = (video) => {
         this.setState({selectedVideo: video})

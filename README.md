@@ -20,9 +20,8 @@ https://github.com/ghudson46/final-project
 
 ## Installation
 
-* yarn install
-* npm run seed
-* npm run start: dev
+* npm install
+* npm start
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
