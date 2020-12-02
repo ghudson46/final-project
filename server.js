@@ -102,15 +102,6 @@ mongoose.connect(
   }
 );
 
-// mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',  
-//   { 
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false 
-//     }
-// );
-
 server.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
