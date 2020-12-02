@@ -92,25 +92,24 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-// mongodb connection
-// mongoose.connect(
-//   process.env.MONGODB_URI || "mongodb://localhost/project3",
-//      {
-//        useNewUrlParser: true,
-//        useUnifiedTopology: true,
-//        useCreateIndex: true,
-//        useFindAndModify: false
-//      }
-// );
-
-mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',  
-  { 
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/project3',
+  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false 
-    }
+    useFindAndModify: false
+  }
 );
+
+// mongoose.connect('mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',  
+//   { 
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false 
+//     }
+// );
 
 server.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
