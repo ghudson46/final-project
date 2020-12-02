@@ -93,7 +93,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/project3',
+  process.env.MONGODB_URI || 'mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
