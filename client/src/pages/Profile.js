@@ -33,10 +33,10 @@ function Profile() {
 
 
     return (
-        user ? (
+        isAuthenticated ? (
         <span  className="profileContainer" style={{display:'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
             <div className="userInfo">
-                <img src={user.picture} alt={user.name} style={{borderRadius: '50%', height: '10rem', width: '10rem'}}/>
+                <img src={user.picture}  referrerpolicy="no-referrer" alt={user.name} style={{borderRadius: '50%', height: '10rem', width: '10rem'}}/>
                 <h2>{user.name}</h2>
                 <p>{user.email}</p>
             </div>

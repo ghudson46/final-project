@@ -12,11 +12,11 @@ const roomSeed = [
     },
     {
         userId: 'google-oauth2|106316170555327315614',
-        name: 'Star Wars'
+        name: 'Study Group'
     },
     {
       userId: 'google-oauth2|106316170555327315614',
-        name: 'LA Lakers'
+        name: 'College Friends'
     }
 ]
 
