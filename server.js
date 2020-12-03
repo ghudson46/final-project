@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const socketio = require('socket.io');
 const cors = require('cors');
 const Message = require('./models/message');
+const routes = require('./routes');
 
 // Express app connects to server and socket
 const app = express();
@@ -13,9 +14,6 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-
-const routes = require('./routes');
-app.use(routes);
 
 // If its production environment!
 if (process.env.NODE_ENV === 'production') {
@@ -27,6 +25,8 @@ if (process.env.NODE_ENV === 'production') {
 		res.sendFile(path.join(__dirname, 'client/build/'))
 	});
 }
+
+app.use(routes);
 
 mongoose.connect(
   'mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',
