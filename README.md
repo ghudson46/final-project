@@ -57,11 +57,13 @@ On the room page, we are able to search for a video utilizing the YouTube API. T
 ## Technologies Used
 * Node JS
 * Express
-* MySQL
 * React
 * MongoDB
 * Heroku
-* Bootstrap
+* React-Bootstrap
+* Auth0
+* Socket.io
+* Youtube API
 
 ## Future Development
 * add the ability to sync video so a room host can control the video playback
