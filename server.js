@@ -1,6 +1,7 @@
 // Dependencies for socket.io
 const http = require('http');
 const express = require('express');
+const mongoose = require('mongoose');
 const socketio = require('socket.io');
 const cors = require('cors');
 const Message = require('./models/message');
@@ -13,18 +14,35 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-// Dependencies for mongodb
-const mongoose = require('mongoose');
+const routes = require('./routes');
+app.use(routes);
+
+// If its production environment!
+if (process.env.NODE_ENV === 'production') {
+  console.log(path.join(__dirname, '/client/build/'));
+	const path = require('path');
+	// console.log('YOU ARE IN THE PRODUCTION ENV');
+	app.use('/static', express.static(path.join(__dirname, 'client/build/static')));
+	app.get('/', (req, res) => {
+		res.sendFile(path.join(__dirname, 'client/build/'))
+	});
+}
+
+mongoose.connect(
+  'mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // User methods
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 
 const server = http.createServer(app);
 const io = socketio(server);
-
-const routes = require('./routes');
-app.use(routes);
-
 
 // on connection to socket.io
 io.on('connect', (socket) => {
@@ -79,28 +97,6 @@ io.on('connect', (socket) => {
     }
   })
 });
-
-// If its production environment!
-if (process.env.NODE_ENV === 'production') {
-  console.log(path.join(__dirname, '/client/build/'));
-	const path = require('path');
-	// console.log('YOU ARE IN THE PRODUCTION ENV');
-	app.use('/static', express.static(path.join(__dirname, 'client/build/static')));
-	app.get('/', (req, res) => {
-		res.sendFile(path.join(__dirname, 'client/build/'))
-	});
-}
-
-
-mongoose.connect(
-  'mongodb+srv://ghudson:MongoDB123!@cluster0.akxae.mongodb.net/project3?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
-);
 
 server.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
