@@ -18,7 +18,7 @@ import './Chat.css';
 
 
 
-const ENDPOINT = 'http://project-3-kickback.herokuapp.com/'; 
+const ENDPOINT = 'localhost:3001'; 
 
 // Create socket variable
 let socket;
