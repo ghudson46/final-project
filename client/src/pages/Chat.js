@@ -18,7 +18,7 @@ import './Chat.css';
 
 
 
-const ENDPOINT = 'localhost:3001'; 
+const ENDPOINT = 'http://localhost:3001'; 
 
 // Create socket variable
 let socket;
